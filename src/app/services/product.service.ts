@@ -12,4 +12,20 @@ export class ProductService {
   public getAllProducts() {
     return this.http.get(this.API_URL);
   }
+
+  public getProductById(id: any) {
+    return this.http.get(`${this.API_URL}/${id}`)
+  }
+
+  public createProduct(productData: any) {
+    return this.http.post(this.API_URL, productData);
+  }
+
+  public updateProductById(id: any, productData: any) {
+    return this.http.put(`${this.API_URL}/${id}`, productData);
+  }
+
+  public deleteProductById(id: any) {
+    return this.http.delete(`${this.API_URL}/${id}`);
+  }
 }
