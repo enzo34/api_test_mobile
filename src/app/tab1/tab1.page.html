@@ -6,12 +6,17 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content >
+  <ion-card *ngFor="let product of products">
+    <ion-card-header>
+      <ion-card-subtitle>{{product.price}} €</ion-card-subtitle>
+      <ion-card-title>{{product?.name}}</ion-card-title>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{product.description}}
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
