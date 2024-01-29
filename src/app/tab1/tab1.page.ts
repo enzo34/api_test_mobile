@@ -9,12 +9,11 @@ import { ProductService } from '../services/product.service';
 export class Tab1Page implements OnInit {
   products: any;
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.productService.getAllProducts().subscribe(data => this.products = data)
   }
 
-
-
+  
 }
